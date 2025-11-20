@@ -171,7 +171,7 @@
         </footer>
     </main>
 <script>
-    
+    // Este orden es CRÍTICO y debe coincidir con el orden de las columnas que la API espera
     const INPUT_IDS = [
         'Hours_Studied', 'Attendance', 'Parental_Involvement', 'Access_to_Resources', 'Extracurricular_Activities', 
         'Sleep_Hours', 'Previous_Scores', 'Motivation_Level', 'Internet_Access', 'Tutoring_Sessions', 
@@ -199,7 +199,7 @@
         
         // 2. Enviar la petición a la API REST
         try {
-            const response = await fetch('https://noneagerly-leadless-casen.ngrok-free.dev/predict', {
+            const response = await fetch('http://127.0.0.1:5000/predict', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -222,7 +222,7 @@
         } catch (error) {
             // Error de conexión (la API no está corriendo o el puerto es incorrecto)
             console.error("Error de conexión:", error);
-            outputDiv.innerHTML = "Error de conexión: Asegúrate que la API de Flask esté corriendo en https://noneagerly-leadless-casen.ngrok-free.dev/predict";
+            outputDiv.innerHTML = "Error de conexión: Asegúrate que la API de Flask esté corriendo en http://127.0.0.1:5000";
         }
     }
 </script>
